@@ -1,7 +1,11 @@
 {
   "name": "along-way-project",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "logfmt": "~0.21.0",
+    "express": "~3.4.8",
+    "foreman": "0.0.26"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
