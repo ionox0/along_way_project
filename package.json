@@ -29,10 +29,11 @@
     "grunt-concurrent": "~0.1.0",
     "matchdep": "~0.1.1",
     "grunt-contrib-livereload": "~0.1.2",
-    "grunt-dalek": "~0.1.0"
+    "grunt-dalek": "~0.1.0",
+    "grunt-cli": "~0.1.13"
   },
-    "scripts": {
-    "postinstall": "grunt build"
+  "scripts": {
+    "postinstall": " ./node_modules/grunt-cli/bin/grunt build"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
