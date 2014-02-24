@@ -33,7 +33,7 @@
     "grunt-cli": "~0.1.13"
   },
   "scripts": {
-    "postinstall": " ./node_modules/grunt-cli/bin/grunt build"
+    "postinstall": "./node_modules/.bin/grunt"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
