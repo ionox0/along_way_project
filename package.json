@@ -6,6 +6,9 @@
     "express": "~3.4.8",
     "foreman": "0.0.26"
   },
+    "scripts": {
+    "postinstall": "echo postinstall time; ./node_modules/grunt/bin/grunt build"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
