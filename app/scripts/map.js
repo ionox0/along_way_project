@@ -6,11 +6,12 @@ window.google_initialize = function () {
     var map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
     var service;
+    
     infoWindow = new google.maps.InfoWindow();
   service = new google.maps.places.PlacesService(map);
 
   google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
-}
+
 
 function performSearch() {
   var request = {
@@ -25,7 +26,7 @@ function callback(results, status) {
     alert(status);
     return;
   }
-  for (var i = 0, result; result = results[i]; i++) {
+  for (var i = 0, result; result = results[i]; i++){
     var marker = new google.maps.Marker({
       map: map,
       position: result.geometry.location
@@ -34,7 +35,6 @@ function callback(results, status) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
 };
 
 $(document).ready(function () {
