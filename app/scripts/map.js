@@ -9,7 +9,6 @@ window.google_initialize = function () {
     
     infoWindow = new google.maps.InfoWindow();
   service = new google.maps.places.PlacesService(map);
-
   google.maps.event.addListenerOnce(map, 'bounds_changed', performSearch);
 
 
@@ -35,6 +34,27 @@ function callback(results, status) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+    var marker = new google.maps.Marker({
+      position: map.getCenter(),
+      map: map,
+      title: 'Click to zoom'
+    });
+
+    var codeAddress = function() {
+      var address = document.getElementById("search").value;
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          map.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+          });
+        } else {
+          alert("Geocode was not successful for the following reason: " + status);
+        }
+      });
+    };  
 };
 
 $(document).ready(function () {

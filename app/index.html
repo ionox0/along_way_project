@@ -6,19 +6,16 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <title>Foundation 4</title>
-
     <link rel="stylesheet" href="styles/foundation.css" />
     <link rel="stylesheet" href="styles/styles.css" />
     <script data-main="scripts/main" src="scripts/libs/require.js"></script>
-
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css">
-        html { height: 100% }
-        body { height: 100%; margin: 0; padding: 0 }
-        #map-canvas { height: 100% }
+        html, body, #map-canvas { height: 100%; margin:0; padding:0; }
     </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="scripts/latlon.js"></script>
 
 </head>
 
@@ -58,7 +55,13 @@
                     <ul class="right">
                         <li class="search">
                             <form>
-                                <input type="search">
+                                <input id="start" type="textbox">
+                                <input type="button" value="Start" onclick="codeAddress('start')">
+                            </form>
+
+                            <form>
+                                <input id="end" type="textbox">
+                                <input type="button" value="End" onclick="calcRoute()">
                             </form>
                         </li>
 
@@ -73,9 +76,8 @@
 
         </div>
     </div>
-
     <div id="map-canvas"></div>
-
+    <div id="warnings_panel"></div>
 </body>
 
 </html>
