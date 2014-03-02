@@ -11,14 +11,25 @@ window.google_initialize = function () {
         zoom: 15,
         center: initialLocation
     };
+
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    function addMarker(initialLocation) {
+        map.setCenter(initialLocation);
+        var marker = new google.maps.Marker({
+            position: initialLocation,
+            map: map,
+            title: 'Click to zoom'
+        });
+    }
+
     var latlng = new google.maps.LatLng(47.6101, -122.3420);
-   
+
     if (navigator.geolocation) {
         browserSupportFlag = true;
         navigator.geolocation.getCurrentPosition(function (position) {
             initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            map.setCenter(initialLocation);
+            addMarker(initialLocation);
         }, function () {
             handleNoGeolocation(browserSupportFlag);
         });
@@ -26,14 +37,10 @@ window.google_initialize = function () {
     // Browser doesn't support Geolocation
     else {
         initialLocation = latlng;
+        addMarker(initialLocation);
     }
-    map.setCenter(initialLocation);
 
-    var marker = new google.maps.Marker({
-        position: map.getCenter(),
-        map: map,
-        title: 'Click to zoom'
-    });
+
     var codeAddress = function () {
         var address = document.getElementById("search").value;
         geocoder.geocode({
@@ -91,14 +98,14 @@ window.google_initialize = function () {
             stepDisplay.open(map, marker);
         });
     }
-    
+
     infoWindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
-   $("button[type=submit]").click(performSearch);
+    $("button[type=submit]").click(performSearch);
 
     function performSearch() {
         var place = document.getElementById('typePlace').value;
-        
+
         var request = {
             bounds: map.getBounds(),
             keyword: place
