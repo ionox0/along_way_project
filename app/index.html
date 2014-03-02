@@ -14,9 +14,7 @@
     <style type="text/css">
         html, body, #map-canvas { height: 100%; margin:0; padding:0; }
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script src="scripts/latlon.js"></script>
-
+    
 </head>
 
 <body>
@@ -25,54 +23,24 @@
 
             <!-- Navigation -->
 
-            <nav class="top-bar">
-                <ul class="title-area">
-                    <!-- Title Area -->
-                    <li class="name">
-                        <h1>
-                            <a href="#">
-                                Top Bar Title
-                            </a>
-                        </h1>
-                    </li>
-                    <li class="toggle-topbar menu-icon">
-                        <a href="#">
-                            <span>menu</span>
-                        </a>
-                    </li>
-                </ul>
 
-                <section class="top-bar-section">
-                    <ul class="left">
-                        <li>
-                            <a href="#">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Link 2</a>
-                        </li>
-                    </ul>
+            <form>
+                <input id="start" type="textbox">
+                <input type="button" value="Start" onclick="codeAddress('start')">
+            </form>
 
-                    <ul class="right">
-                        <li class="search">
-                            <form>
-                                <input id="start" type="textbox">
-                                <input type="button" value="Start" onclick="codeAddress('start')">
-                            </form>
+            <form>
+                <input id="end" type="textbox">
+                <input type="button" value="End" onclick="calcRoute()">
+            </form>
 
-                            <form>
-                                <input id="end" type="textbox">
-                                <input type="button" value="End" onclick="calcRoute()">
-                            </form>
-                        </li>
+            <div class="has-button">
+                <a class="small button" href="#">Search</a>
+            </div>
+            
+                <input id="typePlace" type="text" placeholder="what are you looking for?"></input>
+           <button type=submit>submit</button>
 
-                        <li class="has-button">
-                            <a class="small button" href="#">Search</a>
-                        </li>
-                    </ul>
-                </section>
-            </nav>
-
-            <!-- End Navigation -->
 
         </div>
     </div>
