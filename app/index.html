@@ -14,8 +14,7 @@
     <style type="text/css">
         html, body, #map-canvas { height: 100%; margin:0; padding:0; }
     </style>
-    <script src="scripts/places.js"></script>
-    
+
 </head>
 
 <body>
@@ -23,22 +22,16 @@
         <div class="large-12 columns">
 
 
-            <form id="startForm">
+            <form id="directionsForm">
                 <input id="start" type="textbox">
-                <input type="button" value="Start">
-            </form>
-
-            <form id="endForm">
                 <input id="end" type="textbox">
-                <input type="button" value="End">
             </form>
 
-            <div class="has-button">
-                <a class="small button" href="#">Search</a>
-            </div>
-            
-                <input id="typePlace" type="text" placeholder="what are you looking for?"></input>
-           <button type=submit>submit</button>
+            <button type="submit" onclick="calcRoute()" href="#">Search
+            </button>
+
+            <input id="typePlace" type="text" placeholder="what are you looking for?"></input>
+            <button type="submit">submit</button>
 
 
         </div>

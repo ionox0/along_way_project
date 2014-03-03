@@ -1,0 +1,19 @@
+$separator:#9B1336;
+ $titles:#f35338;
+ $text:#2c1d2e;
+ $background:#c7c6b8;
+ $background2:#35819d;
+ body {
+    background-color: $background;
+    
+}
+button {
+    background-color: $background2;
+   
+}
+input {
+    height: auto;
+    width: 100%;
+    font-size: 1em;
+    padding: 0.3em;
+}
