@@ -82,6 +82,8 @@ window.google_initialize = function () {
             }
         });
     }
+    $("#startForm input[type='button']").click(calcRoute);
+    
     directionsDisplay = new google.maps.DirectionsRenderer();
     var rendererOptions = {
         map: map
