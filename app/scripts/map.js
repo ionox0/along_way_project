@@ -1,4 +1,4 @@
-window.google_initialize = function () {
+window.initialize = function () {
     var geocoder;
     var map;
     var service;
@@ -101,40 +101,41 @@ window.google_initialize = function () {
         });
     }
 
-    infoWindow = new google.maps.InfoWindow();
-    service = new google.maps.places.PlacesService(map);
-    $("button[type=submit]").click(performSearch);
+//    infoWindow = new google.maps.InfoWindow();
+//    service = new google.maps.places.PlacesService(map);
+//    $("button[type=submit]").click(performSearch);
+//
+//    function performSearch() {
+//        var place = document.getElementById('typePlace').value;
+//
+//        var request = {
+//            bounds: map.getBounds(),
+//            keyword: place
+//        };
+//        service.radarSearch(request, callback);
+//    }
+//
+//    function callback(results, status) {
+//        if (status != google.maps.places.PlacesServiceStatus.OK) {
+//            alert(status);
+//            return;
+//        }
+//        for (var i = 0, result; result = results[i]; i++) {
+//            var marker = new google.maps.Marker({
+//                map: map,
+//                position: result.geometry.location
+//            });
+//        }
+//    }
+    
 
-    function performSearch() {
-        var place = document.getElementById('typePlace').value;
-
-        var request = {
-            bounds: map.getBounds(),
-            keyword: place
-        };
-        service.radarSearch(request, callback);
-    }
-
-    function callback(results, status) {
-        if (status != google.maps.places.PlacesServiceStatus.OK) {
-            alert(status);
-            return;
-        }
-        for (var i = 0, result; result = results[i]; i++) {
-            var marker = new google.maps.Marker({
-                map: map,
-                position: result.geometry.location
-            });
-        }
-    }
-
-    google.maps.event.addDomListener(window, 'load', google_initialize);
+    google.maps.event.addDomListener(window, 'load', initialize);
 };
 
 
 $(document).ready(function () {
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC2CVRCqI-iLtJ5_MdAlXxeqe8qU193WuI&libraries=places&sensor=false&callback=google_initialize';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC2CVRCqI-iLtJ5_MdAlXxeqe8qU193WuI&libraries=places&sensor=false&callback=initialize';
     document.body.appendChild(script);
 });
