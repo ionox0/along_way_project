@@ -2,11 +2,10 @@ infoWindow = new google.maps.InfoWindow();
 service = new google.maps.places.PlacesService(map);
 $("button[type=submit]").click(performSearch);
 
-function placesSearch() {
+
 
     function performSearch() {
         var place = document.getElementById('typePlace').value;
-
         var request = {
             bounds: map.getBounds(),
             keyword: place
@@ -26,4 +25,3 @@ function placesSearch() {
             });
         }
     }
-}

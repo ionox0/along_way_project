@@ -19,21 +19,17 @@
 
 <body>
     <div class="row">
-        <div class="large-12 columns">
-
-
+        <div class="large-12 medium-12 small-12 columns">
             <form id="directionsForm">
-                <input id="start" type="textbox">
-                <input id="end" type="textbox">
+                <input class="large-6 medium-6 small-12 columns" id="start" type="textbox" placeholder="Where do you want to start your route?">
+                <input class="large-6 medium-6 small-12 columns" id="end" type="textbox" placeholder="Where do you want to end your route?">
+                <button class="large-centered  small-centered medium-centered columns" type="submit" onclick="calcRoute()" href="#">Get Directions
+                </button>
             </form>
-
-            <button type="submit" onclick="calcRoute()" href="#">Search
-            </button>
-
-            <input id="typePlace" type="text" placeholder="what are you looking for?"></input>
-            <button type="submit">submit</button>
-
-
+            <form class="placesSearch">
+                <input class="large-12 medium-12 small-12 columns" id="typePlace" type="textbox" placeholder="what are you looking for?"></input>
+                <button class="large-centered small-centered medium-centered columns" type="submit">Search Places</button>
+            </form>
         </div>
     </div>
     <div id="map-canvas"></div>

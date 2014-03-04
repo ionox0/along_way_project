@@ -1,19 +1,32 @@
-$separator:#9B1336;
- $titles:#f35338;
- $text:#2c1d2e;
- $background:#c7c6b8;
- $background2:#35819d;
+$separator:#338DCD;
+ $accent:#FFCD33;
+ $text:#444444;
+ $background:#E1E1E1;
+ $background2:#ED4848;
  body {
     background-color: $background;
-    
 }
 button {
     background-color: $background2;
-   
+    margin: 0;
+    border-color: $background;
+    border-radius: 0.3em;
+}
+button:hover,
+button:focus,
+button:active,
+button:visited {
+    background-color: $background2;
+    border-color: $background;
 }
 input {
     height: auto;
     width: 100%;
     font-size: 1em;
     padding: 0.3em;
+    margin: 0;
+    border-radius: 0.3em;
+}
+#map-canvas {
+    border-top: 0.2em solid $separator;
 }
