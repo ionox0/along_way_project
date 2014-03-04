@@ -14,6 +14,7 @@ function findPlaces(boxes, searchIndex) {
            alert("Request["+searchIndex+"] failed: "+status);
            return;
        }
+
        //document.getElementById('side_bar').innerHTML += "bounds["+searchIndex+"] returns "+results.length+" results<br>"
        for (var i = 0, result; result = results[i]; i++) {
 
@@ -26,3 +27,12 @@ function findPlaces(boxes, searchIndex) {
            findPlaces(boxes,searchIndex);
    });
 }
+
+// function clearPlaces() {
+//   if (markers != null) {
+//     for (var i = 0; i < markers.length; i++) {
+//       markers[i].setMap(null);
+//     }
+//   }
+//   markers = null;
+// }

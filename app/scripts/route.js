@@ -5,6 +5,7 @@ function calcRoute() {
  var directionsDisplay = new google.maps.DirectionsRenderer();
  directionsDisplay.setMap(map);
  clearBoxes();
+ clearMarkers();
  var distance = parseFloat(20) * 1.609344;
  var start = document.getElementById('start').value;
  var end = document.getElementById('end').value;

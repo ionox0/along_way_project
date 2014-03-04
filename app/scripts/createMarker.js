@@ -1,6 +1,7 @@
 var infowindow = new google.maps.InfoWindow();
+var gmarkers = [];
 
-function createMarker(place){
+function createMarker(place, clear){
    var placeLoc=place.geometry.location;
    if (place.icon) {
        var image = new google.maps.MarkerImage(
@@ -37,8 +38,17 @@ function createMarker(place){
        });
 
    });
-   var gmarkers = [];
    gmarkers.push(marker);
+
    var side_bar_html = "<a href='javascript:google.maps.event.trigger(gmarkers["+parseInt(gmarkers.length-1)+"],\"click\");'>"+place.name+"</a><br>";
    //document.getElementById('side_bar').innerHTML += side_bar_html;
+}
+
+function clearMarkers() {
+  if (gmarkers.length > 0) {
+   for (var i = 0; i < gmarkers.length; i++) {
+     gmarkers[i].setMap(null);
+   }
+  }
+  gmarkers = [];
 }
