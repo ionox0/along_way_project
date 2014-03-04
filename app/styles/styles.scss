@@ -5,12 +5,30 @@ $separator:#338DCD;
  $background2:#ED4848;
  body {
     background-color: $background;
+    font-family: "Open Sans";
+}
+nav {
+    position: relative;
+    top: 0;
+    height: 3em;
+    width: 100%;
+    background-color: $separator;
+    color: white;
+}
+header {
+    text-align: center;
+    font-weight: 100;
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    font-family: "Dancing Script"
 }
 button {
     background-color: $background2;
     margin: 0;
     border-color: $background;
     border-radius: 0.3em;
+    margin-top: 3px;
+    font-weight: 100;
 }
 button:hover,
 button:focus,
@@ -20,12 +38,13 @@ button:visited {
     border-color: $background;
 }
 input {
-    height: auto;
     width: 100%;
     font-size: 1em;
-    padding: 0.3em;
+    padding: 0.5em;
     margin: 0;
     border-radius: 0.3em;
+    margin-top: 3px;
+    font-weight: 100;
 }
 #map-canvas {
     border-top: 0.2em solid $separator;

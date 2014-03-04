@@ -7,9 +7,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <title>Foundation 4</title>
+    <title>Places along the way</title>
+    <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/foundation.css" />
     <link rel="stylesheet" href="styles/styles.css" />
+
     <script data-main="scripts/main" src="scripts/libs/require.js"></script>
     <style type="text/css">
         html, body, #map-canvas { height: 100%; margin:0; padding:0; }
@@ -18,18 +20,25 @@
 </head>
 
 <body>
+    <nav>
+        <header>Places along the way</header>
+    </nav>
     <div class="row">
         <div class="large-12 medium-12 small-12 columns">
-            <form id="directionsForm">
+            <div id="directionsForm">
                 <input class="large-6 medium-6 small-12 columns" id="start" type="textbox" placeholder="Where do you want to start your route?">
                 <input class="large-6 medium-6 small-12 columns" id="end" type="textbox" placeholder="Where do you want to end your route?">
-                <button class="large-centered  small-centered medium-centered columns" type="submit" onclick="calcRoute()" href="#">Get Directions
-                </button>
-            </form>
-            <form class="placesSearch">
+                
+                    <button type="submit" onclick="calcRoute()" href="#">Get Directions
+                    </button>
+                
+            </div>
+            <div class="placesSearch">
                 <input class="large-12 medium-12 small-12 columns" id="typePlace" type="textbox" placeholder="what are you looking for?"></input>
-                <button class="large-centered small-centered medium-centered columns" type="submit">Search Places</button>
-            </form>
+                
+                    <button id="search-places-button">Search Places</button>
+                
+            </div>
         </div>
     </div>
     <div id="map-canvas"></div>

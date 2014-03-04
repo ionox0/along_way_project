@@ -1,12 +1,14 @@
 window.initialize = function () {
-    var geocoder;
+    var geocoder = new google.maps.Geocoder();
     var map;
     var service;
     var directionsService = new google.maps.DirectionsService();
     var markerArray = [];
     var initialLocation;
-    geocoder = new google.maps.Geocoder();
+    var defaultLocation = new google.maps.LatLng(47.6101, -122.3420);
+    var stepDisplay = new google.maps.InfoWindow();
 
+    
     var mapOptions = {
         zoom: 15,
         center: initialLocation
@@ -23,8 +25,6 @@ window.initialize = function () {
         });
     }
 
-    var latlng = new google.maps.LatLng(47.6101, -122.3420);
-
     if (navigator.geolocation) {
         browserSupportFlag = true;
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -36,7 +36,7 @@ window.initialize = function () {
     }
     // Browser doesn't support Geolocation
     else {
-        initialLocation = latlng;
+        initialLocation = defaultLocation;
         addMarker(initialLocation);
     }
 
@@ -103,7 +103,7 @@ window.initialize = function () {
 
     infoWindow = new google.maps.InfoWindow();
     service = new google.maps.places.PlacesService(map);
-    $("button[type=submit]").click(performSearch);
+    $("#search-places-button").click(performSearch);
 
     function performSearch() {
         var place = document.getElementById('typePlace').value;
@@ -115,24 +115,27 @@ window.initialize = function () {
     }
 
     function callback(results, status) {
-        var markerArray = new Array(results.length);
+        clearSearch();
         if (status != google.maps.places.PlacesServiceStatus.OK) {
             alert(status);
-            return;
+            return false;
         }
         for (var i = 0, result; result = results[i]; i++) {
             var marker = new google.maps.Marker({
                 map: map,
                 position: result.geometry.location
             });
+            markerArray.push(marker);
+            attachInstructionText(marker, "TEST!");
         }
 
         function clearSearch() {
             if (markerArray != null) {
-                for (var i = 0; i < markerArray.length ; i++) {
-                    marker[i].setMap(null);
+                for (var i = 0; i < markerArray.length; i++) {
+                    markerArray[i].setMap(null);
                 }
             }
+            markerArray = [];
         }
     }
 
