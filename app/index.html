@@ -19,30 +19,51 @@
 
 </head>
 
-<body>
+<body onload="initialize();">
     <nav>
         <header>Places along the way</header>
     </nav>
     <div class="row">
         <div class="large-12 medium-12 small-12 columns">
-            <div id="directionsForm">
-                <input class="large-6 medium-6 small-12 columns" id="start" type="textbox" placeholder="Where do you want to start your route?">
-                <input class="large-6 medium-6 small-12 columns" id="end" type="textbox" placeholder="Where do you want to end your route?">
-                
-                   <div class="large-4 medium-4 small-6 large-centered medium-centered small-centered columns">  <button type="submit" onclick="calcRoute()" href="#">Get Directions
-                    </button></div>
-                
+            <div id="directions">
+                <input class="large-6 medium-6 small-12 columns" id="start" value="Start" type="textbox" placeholder="Where do you want to start your route?">
+                <input class="large-6 medium-6 small-12 columns" id="end" value="End" type="textbox" placeholder="Where do you want to end your route?">
+
+                <div class="large-4 medium-4 small-6 large-centered medium-centered small-centered columns">
+                    <button type="submit" id="submit" href="#">Get Directions
+                    </button>
+                </div>
+
             </div>
             <div class="placesSearch">
                 <input class="large-12 medium-12 small-12 columns" id="typePlace" type="textbox" placeholder="what are you looking for?"></input>
-                
-                  <div class="large-4 medium-4 small-6 large-centered medium-centered small-centered columns">  <button id="search-places-button">Search Places</button></div>
-                
+
+                <div class="large-4 medium-4 small-6 large-centered medium-centered small-centered columns">
+                    <button id="search-places-button">Search Places</button>
+                </div>
+
             </div>
         </div>
     </div>
     <div id="map-canvas"></div>
     <div id="warnings_panel"></div>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2CVRCqI-iLtJ5_MdAlXxeqe8qU193WuI&sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/routeboxer/src/RouteBoxer.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src='scripts/map.js'></script>
+    <script src='scripts/route.js'></script>
+    <script src='scripts/boxMaker.js'></script>
+    <script src='scripts/createMarker.js'></script>
+    <script src='scripts/findPlaces.js'></script>
+
+    <script type="text/javascript">
+        $('#directions').submit(function(e){
+           calcRoute();
+           e.preventDefault();
+         });
+    </script>
 </body>
 
 </html>
