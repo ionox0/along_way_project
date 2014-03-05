@@ -8,7 +8,7 @@ function findPlaces(boxes, searchIndex) {
   placesServices = new google.maps.places.PlacesService(map);
   var request = {
     bounds: boxes[searchIndex],
-    keyword: 'gas_station'
+    keyword: place
   }
   placesServices.radarSearch(request, function (results, status) {
 

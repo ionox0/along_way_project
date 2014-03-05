@@ -12,15 +12,21 @@ function createMarker(place){
   }
   else var image = null;
 
-  var marker=new google.maps.Marker({
-    map:map,
-    icon: image,
-    position:place.geometry.location
-  });
-  google.maps.event.addListener(marker, 'click', toggleBounce());
+  var marker;
+
+  //setTimeout(function(){
+    marker=new google.maps.Marker({
+      map:map,
+      icon: image,
+      position:place.geometry.location
+    });
+  //}, 200);
+
+  //marker.setAnimation(google.maps.Animation.BOUNCE);
   var request =  {
     reference: place.reference
   };
+
   google.maps.event.addListener(marker,'click',function(){
     placesServices.getDetails(request, function(place, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -49,11 +55,11 @@ function clearMarkers() {
   gmarkers = [];
 }
 
-function toggleBounce() {
+// function toggleBounce() {
 
-  if (this.getAnimation() != null) {
-    this.setAnimation(null);
-  } else {
-    this.setAnimation(google.maps.Animation.BOUNCE);
-  }
-}
+//   if (this.getAnimation() != null) {
+//     this.setAnimation(null);
+//   } else {
+//     this.setAnimation(google.maps.Animation.BOUNCE);
+//   }
+// }
