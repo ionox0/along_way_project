@@ -17,25 +17,28 @@
         html, body, #map-canvas { height: 100%; margin:0; padding:0; }
     </style>
 
-</head>
+</head >
 
 <body onload="initialize();">
-    <nav>
+     <div class="largeScreen">
+        <div class="row">
+        <nav class="large-12 medium-12 small-12 columns">
         <header>Places along the way</header>
     </nav>
-    <div class="row">
+   
         <div id='directions' class="large-12 medium-12 small-12 columns">
-            <input type='text' class="large-6 medium-6 small-12 columns" id='start' placeholder="Start">
-            <input type='text' class="large-6 medium-6 small-12 columns" id='end' placeholder='End'>
-             <div class="large-4 medium-4 small-6 large-centered medium-centered small-centered columns">
+            <input type='text' class="large-12 medium-6 small-12 columns" id='start' placeholder="Start">
+            <input type='text' class="large-12 medium-6 small-12 columns" id='end' placeholder='End'>
+             <div class="large-12 medium-4 small-6 large-centered medium-centered small-centered columns">
                 <button type='submit' id='submit'>Get Directions</button>
             </div>
             <input type='text' id='Place' class="large-12 medium-12 small-12 columns" placeholder='What are you looking for?'>
-            <div class="large-4 medium-4 small-6 large-centered medium-centered small-centered columns">
+            <div class="large-12 medium-4 small-6 large-centered medium-centered small-centered columns">
                     <button id="search-places-button">Search Places</button>
                 </div>
            
         </div>
+    </div>
     </div>
 
     <div id="map-canvas"></div>
