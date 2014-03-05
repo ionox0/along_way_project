@@ -1,38 +1,39 @@
 var placesServices;
 var minRating = 1;
+var markers = [];
 
-function findPlaces(boxes, searchIndex, place) {
-   placesServices = new google.maps.places.PlacesService(map);
-   var request = {
-       bounds: boxes[searchIndex],
-// List of supported types
-// https://developers.google.com/places/documentation/supported_types
-       keyword: place
-     }
-   placesServices.radarSearch(request, function (results, status) {
-       if (status != google.maps.places.PlacesServiceStatus.OK) {
-           alert("Request["+searchIndex+"] failed: "+status);
-           return;
-       }
+function findPlaces(boxes, searchIndex) {
 
-       //document.getElementById('side_bar').innerHTML += "bounds["+searchIndex+"] returns "+results.length+" results<br>"
-       for (var i = 0, result; result = results[i]; i++) {
+  var place = document.getElementById('place').value;
+  placesServices = new google.maps.places.PlacesService(map);
+  var request = {
+    bounds: boxes[searchIndex],
+    keyword: 'gas_station'
+  }
+  placesServices.radarSearch(request, function (results, status) {
 
-           //if (placesServices..getDetails(.rating > minRating){
-               var marker = createMarker(result);
-           //}
-       }
-       searchIndex++;
-       if (searchIndex < boxes.length)
-           findPlaces(boxes,searchIndex, place);
-   });
+    if (status != google.maps.places.PlacesServiceStatus.OK) {
+      alert("Request["+searchIndex+"] failed: "+status);
+      return;
+    }
+    for (var i = 0, result; result = results[i]; i++) {
+      var marker = createMarker(result);
+      markers.push(marker);
+    }
+    searchIndex++;
+    if (searchIndex < boxes.length)
+      findPlaces(boxes,searchIndex);
+
+  });
 }
 
 // function clearPlaces() {
-//   if (markers != null) {
+//   if (markers.length != 0) {
+//     console.log(markers.length);
 //     for (var i = 0; i < markers.length; i++) {
+//       console.log(markers[i]);
 //       markers[i].setMap(null);
 //     }
 //   }
-//   markers = null;
+//   markers = [];
 // }
