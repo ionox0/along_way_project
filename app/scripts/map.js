@@ -1,14 +1,7 @@
 var map;
-var initialLocation;
-var defaultLocation = new google.maps.LatLng(47.6101, -122.3420);
+var initialLocation = new google.maps.LatLng(47.6101, -122.3420);;
 
 function initialize() {
-
-    var mapOptions = {
-        zoom: 15,
-        center: initialLocation
-    };
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
     function addMarker(initialLocation) {
         map.setCenter(initialLocation);
@@ -20,17 +13,19 @@ function initialize() {
     }
 
     if (navigator.geolocation) {
-        browserSupportFlag = true;
         navigator.geolocation.getCurrentPosition(function (position) {
             initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             addMarker(initialLocation);
-        }, function () {
-            handleNoGeolocation(browserSupportFlag);
         });
     }
     // Browser doesn't support Geolocation
     else {
-        initialLocation = defaultLocation;
         addMarker(initialLocation);
     }
+
+    var mapOptions = {
+        zoom: 15,
+        center: initialLocation
+    };
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
