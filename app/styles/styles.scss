@@ -44,7 +44,7 @@ nav ul li#list{
     float: right;
     line-height:3em;
     z-index:2;
-    padding-top: 0.75em;
+    
     
     }
 nav ul li#filter{
@@ -61,6 +61,9 @@ nav ul li#filter{
 }
 .fi-map{
     font-size: 1.5em;
+    position: absolute;
+    bottom:0.5em;
+    right: 0.5em;
 } 
 
 //Button Styling
