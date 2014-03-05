@@ -109,7 +109,8 @@ module.exports = function (grunt) {
                 options: {
                     run: true,
                     urls: ['http://localhost:<%= connect.options.port %>/index.html']
-                }
+                },
+                src: ['test/**/*.js']
             }
         },
         coffee: {
@@ -252,8 +253,17 @@ module.exports = function (grunt) {
              },
              dist: {
                src: ['uat/dalekjs-tests.js']
-             }
-           }
+            }
+        },
+        browserify:{
+            all:{
+                src: 'app/scripts/*.js',
+                dest: 'dist/app.js'
+            },
+            options: {
+                transform: ['debowerify']
+            }
+        }
     });
 
     grunt.renameTask('regarde', 'watch');
@@ -297,7 +307,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'test',
-        'build'
+        'build',
+        'browserify'
     ]);
     grunt.registerTask('dalekjs', [
         'clean:server',
