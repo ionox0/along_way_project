@@ -306,8 +306,8 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        //'test',
-        //'build',
+        'test',
+        'build',
         'browserify'
     ]);
     grunt.registerTask('dalekjs', [
