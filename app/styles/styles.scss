@@ -5,10 +5,13 @@ $separator:#338DCD;
  $background2:#ED4848;
  $buttonShadow:#BA3939;
  $buttonShadow2:#6D2121;
- body {
+
+body {
     background-color: $background;
     font-family: "Open Sans";
 }
+
+//Navbar Styling
 nav {
     position: relative;
     top: 0;
@@ -35,11 +38,13 @@ nav ul li#title {
     margin-left: -100px;
     position:absolute;
     line-height: 2em;
+    color: white;
             }
 nav ul li#list{
     float: right;
     line-height:3em;
     z-index:2;
+    
     
     }
 nav ul li#filter{
@@ -54,6 +59,14 @@ nav ul li#filter{
     font-size: 1.5em;
     font-family: "Dancing Script"
 }
+.fi-map{
+    font-size: 1.5em;
+    position: absolute;
+    bottom:0.5em;
+    right: 0.5em;
+} 
+
+//Button Styling
 button {
     background-color: $background2;
     margin: 0;
@@ -77,6 +90,8 @@ button:visited {
     border-color: $buttonShadow;
     box-shadow: 2px 2px 0px 1px $buttonShadow;
 }
+
+//Layout Styling
 #directions {
     input {
         width: 100%;
@@ -121,3 +136,16 @@ button:visited {
         border-top: none;
     }
 }
+
+//List View Styling
+.vcard {
+    border-bottom: 2px solid $separator;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+ul li {
+ color: $text;
+}
+
+
