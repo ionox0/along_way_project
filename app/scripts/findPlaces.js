@@ -24,7 +24,7 @@ function findPlaces(boxes, searchIndex) {
         markers.push(marker);
       //}
     }
-    console.log(placesServices.getDetails());
+    // console.log(placesServices.getDetails());
 
     searchIndex++;
     if (searchIndex < boxes.length)
