@@ -1,0 +1,63 @@
+$separator:#338DCD;
+ $accent:#FFCD33;
+ $text:#444444;
+ $background:#E1E1E1;
+ $background2:#ED4848;
+ $buttonShadow:#BA3939;
+ body {
+    background-color: $background;
+    font-family: "Open Sans";
+}
+nav {
+    position: relative;
+    top: 0;
+    height: 3em;
+    width: 100%;
+    background-color: $separator;
+    color: white;
+}
+header {
+    text-align: center;
+    font-weight: 100;
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    font-family: "Dancing Script"
+}
+button {
+    background-color: $background2;
+    margin: 0;
+    border-color: $buttonShadow;
+    border-radius: 0.3em;
+    margin-top: 3px;
+    margin-bottom: 8px;
+    font-weight: 100;
+    width: 100%;
+    box-shadow: 3px 3px 0px 2px $buttonShadow;
+}
+button:hover,
+button:focus,
+button:active,
+button:visited {
+    background-color: $background2;
+    border-color: $buttonShadow;
+    box-shadow: 2px 2px 0px 1px $buttonShadow;
+}
+input {
+    width: 100%;
+    font-size: 1em;
+    padding: 0.5em;
+    margin: 0;
+    border-radius: 0.3em;
+    margin-top: 3px;
+    font-weight: 100;
+}
+#map-canvas {
+    border-top: 0.2em solid $separator;
+    label {
+        width: auto;
+        display: inline;
+    }
+}
+#map-canvas img {
+    max-width: none;
+}
