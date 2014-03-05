@@ -61,7 +61,7 @@ require.config({
             exports: 'jquery'
         },
         "map": {
-            deps: ["jquery"]
+            deps: ["jquery", "foundation/foundation"]
         }
     }
 

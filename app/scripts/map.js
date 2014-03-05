@@ -10,6 +10,7 @@ function initialize() {
     };
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
+
     function addMarker(initialLocation) {
         map.setCenter(initialLocation);
         var marker = new google.maps.Marker({
