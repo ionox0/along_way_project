@@ -62,19 +62,6 @@
     <script src='scripts/boxMaker.js'></script>
     <script src='scripts/createMarker.js'></script>
     <script src='scripts/findPlaces.js'></script>
-
-    <script type="text/javascript">
-        $('#search-route-button').click(function(e){
-            clearRoute();
-            clearBoxes();
-            calcRoute();
-            e.preventDefault();
-        });
-        $('#search-places-button').click(function(e){
-            clearMarkers();
-            findPlaces(boxes,0);
-            e.preventDefault();
-        });
-    </script>
+    <script src='scripts/clickListeners.js'></script>
 
 </body>
