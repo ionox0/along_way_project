@@ -2,7 +2,6 @@ var infowindow = new google.maps.InfoWindow();
 var gmarkers = [];
 
 function createMarker(place){
-  //var placeLoc=place.geometry.location;
   if (place.icon) {
     var image = new google.maps.MarkerImage(
       place.icon,
@@ -18,6 +17,7 @@ function createMarker(place){
     icon: image,
     position:place.geometry.location
   });
+  google.maps.event.addListener(marker, 'click', toggleBounce());
   var request =  {
     reference: place.reference
   };
@@ -36,12 +36,8 @@ function createMarker(place){
         infowindow.open(map,marker);
       }
     });
-
   });
   gmarkers.push(marker);
-
-  var side_bar_html = "<a href='javascript:google.maps.event.trigger(gmarkers["+parseInt(gmarkers.length-1)+"],\"click\");'>"+place.name+"</a><br>";
-  //document.getElementById('side_bar').innerHTML += side_bar_html;
 }
 
 function clearMarkers() {
@@ -51,4 +47,13 @@ function clearMarkers() {
     }
   }
   gmarkers = [];
+}
+
+function toggleBounce() {
+
+  if (this.getAnimation() != null) {
+    this.setAnimation(null);
+  } else {
+    this.setAnimation(google.maps.Animation.BOUNCE);
+  }
 }

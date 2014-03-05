@@ -26,14 +26,3 @@ function findPlaces(boxes, searchIndex) {
 
   });
 }
-
-// function clearPlaces() {
-//   if (markers.length != 0) {
-//     console.log(markers.length);
-//     for (var i = 0; i < markers.length; i++) {
-//       console.log(markers[i]);
-//       markers[i].setMap(null);
-//     }
-//   }
-//   markers = [];
-// }
