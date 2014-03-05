@@ -1,6 +1,5 @@
 $('#search-route-button').click(function(e){
-    clearRoute();
-    clearBoxes();
+
     calcRoute();
     e.preventDefault();
 });
