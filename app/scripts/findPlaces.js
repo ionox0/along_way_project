@@ -17,9 +17,14 @@ function findPlaces(boxes, searchIndex) {
       return;
     }
     for (var i = 0, result; result = results[i]; i++) {
-      var marker = createMarker(result);
-      markers.push(marker);
+
+      //if (result.rating != null){
+        var marker = createMarker(result);
+
+        markers.push(marker);
+      //}
     }
+    console.log(results);
     searchIndex++;
     if (searchIndex < boxes.length)
       findPlaces(boxes,searchIndex);
