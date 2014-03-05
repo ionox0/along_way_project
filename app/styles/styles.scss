@@ -4,7 +4,7 @@ $separator:#338DCD;
  $background:#E1E1E1;
  $background2:#ED4848;
  $buttonShadow:#BA3939;
- $buttonShadow2:#D64E36;
+ $buttonShadow2:#6D2121 ;
  body {
     background-color: $background;
     font-family: "Open Sans";
@@ -36,8 +36,9 @@ button {
     box-shadow: 3px 3px 0px 2px $buttonShadow;
 }
 button:hover {
-    background-color: $buttonShadow2;
-    border-color: $buttonShadow;
+    background-color: $buttonShadow;
+    border-color: $buttonShadow2;
+    box-shadow: 3px 3px 0px 2px $buttonShadow2;
 }
 button:focus,
 button:active,
@@ -69,7 +70,7 @@ button:visited {
     max-width: none;
     display: inline-block;
 }
-@media (min-width: 1025px) {
+@media (min-width: 768px) {
     .largeScreen {
         left: 0;
         height: 100%;
