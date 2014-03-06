@@ -2,6 +2,7 @@ var infowindow = new google.maps.InfoWindow();
 var gmarkers = [];
 
 function createMarker(place){
+  //console.log("createdMarker" + place);
   if (place.icon) {
     var image = new google.maps.MarkerImage(
       place.icon,
