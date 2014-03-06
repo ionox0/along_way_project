@@ -2,6 +2,5 @@ node_modules
 .sass-cache
 .tmp
 .DS_store
-Procfile
 bower_components/
 dist/
