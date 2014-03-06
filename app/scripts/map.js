@@ -37,7 +37,7 @@ function initialize() {
 
     var end_complete = new google.maps.places.Autocomplete(end);
     end_complete.bindTo('bounds', map);
-    
+
     google.maps.event.addListener(start_complete, 'place_changed', function() {
 
         var place = start_complete.getPlace();
@@ -47,7 +47,7 @@ function initialize() {
 
         if (place.geometry.viewport) {
           map.fitBounds(place.geometry.viewport);
-        } 
+        }
         else {
           map.setCenter(place.geometry.location);
           map.setZoom(17);  // Why 17? Because it looks good.
@@ -63,7 +63,7 @@ function initialize() {
 
         if (place.geometry.viewport) {
           map.fitBounds(place.geometry.viewport);
-        } 
+        }
         else {
           map.setCenter(place.geometry.location);
           map.setZoom(17);  // Why 17? Because it looks good.
