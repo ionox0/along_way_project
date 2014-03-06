@@ -13,11 +13,12 @@ app.get('title');
 
 
 
+// app.use('/dist', express.static(__dirname + '/dist'));
 app.use('/', express.static('./dist'));
 
 
 app.get('/', function (req, res) {
-    res.sendFile('./app/index.html');
+    res.sendfile('./app/index.html');
 });
 
 
