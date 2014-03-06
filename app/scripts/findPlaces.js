@@ -1,24 +1,20 @@
 var placesServices;
 var minRating = 1;
 var markers = [];
+var place = document.getElementById('place').value;
+placesServices = new google.maps.places.PlacesService(map);
+var yelp_key = 'vhGs7ntrDsYquBIwzmouag';
+//var yelp_key = 'iWptnI0ceS0oW8qboR1XGg';
+var yelpURL = "http://api.yelp.com/business_review_search?callback=?";
+var googlePlacesReferences = [];
+var googlePlacesAddresses = [];
 
 function findPlaces(boxes, searchIndex) {
-
-  var place = document.getElementById('place').value;
-
-  placesServices = new google.maps.places.PlacesService(map);
-  var yelp_key = 'vhGs7ntrDsYquBIwzmouag';
-  //var yelp_key = 'iWptnI0ceS0oW8qboR1XGg';
-  var yelpURL = "http://api.yelp.com/business_review_search?callback=?";
 
   var request = {
     bounds: boxes[searchIndex],
     keyword: place
   }
-
-  var googlePlacesReferences = [];
-  var placesAddresses = [];
-  var address;
 
   placesServices.radarSearch(request, function (googleResults, status) {
 
@@ -37,17 +33,7 @@ function findPlaces(boxes, searchIndex) {
         reference: result.reference
     };
 
-    placesServices.getDetails(request, function(place, status) {
-        if (status == google.maps.places.PlacesServiceStatus.OK) {
 
-            placesAddresses.push(place.formatted_address);
-            address = place.formatted_address;
-            //console.log(placesAddresses);
-        }else {
-            var contentStr = "<h5>No Result, status="+status+"</h5>";
-            infowindow.setContent(contentStr);
-        }
-    });
     setTimeout(function(){console.log(placesAddresses)},5000);
 
 
@@ -85,3 +71,15 @@ function findPlaces(boxes, searchIndex) {
 
 }
 
+function getDeets(searchIndex2){
+
+  placesServices.getDetails(request, function(place, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      googlePlacesAddresses.push(place.formatted_address);
+      address = place.formatted_address;
+    }else {
+      var contentStr = "<h5>No Result, status="+status+"</h5>";
+      infowindow.setContent(contentStr);
+    }
+  });
+}
