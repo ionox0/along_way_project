@@ -9,8 +9,11 @@ function calcRoute() {
   clearBoxes();
   clearMarkers();
   var distance = parseFloat(20) * 1.609344;
-  var start = document.getElementById('start').value;
-  var end = document.getElementById('end').value;
+
+  var start = document.getElementById('start').value.trim();
+  var end = document.getElementById('end').value.trim();
+  var place = document.getElementById('place').value.trim();
+
   var request = {
     origin:start,
     destination:end,
@@ -22,6 +25,8 @@ function calcRoute() {
       var path = result.routes[0].overview_path;
       boxes = routeBoxer.box(path, distance);
       drawBoxes(boxes);
+
+      findPlaces(boxes, 0, place);
     }
     else {
       alert("Directions query failed: " + status);

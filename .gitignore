@@ -2,3 +2,5 @@ node_modules
 .sass-cache
 .tmp
 .DS_store
+bower_components/
+dist/

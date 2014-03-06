@@ -45,6 +45,12 @@ placesServices.radarSearch(request, function (results, status) {
 
     }
 
+    // console.log(placesServices.getDetails());
+
+    searchIndex++;
+    if (searchIndex < boxes.length)
+      findPlaces(boxes,searchIndex);
+
     $.getJSON(yelpURL, yelp_params, function(results) {  //call the Yelp API -'results' again is a problem?
         console.log(i + " " + results.businesses[0]);
         console.log(results.businesses[0].avg_rating);
