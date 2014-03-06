@@ -3,4 +3,3 @@ node_modules
 .tmp
 .DS_store
 bower_components/
-dist/

@@ -13,10 +13,8 @@ app.get('title');
 
 
 
-app.use('/', express.static('/app'));
 // app.use('/dist', express.static(__dirname + '/dist'));
-// app.use(express.static(path.join(__dirname, '/../app'));
-// app.use(express.static(path.normalize(path.join(__dirname, '../app')));
+app.use('/', express.static('./dist'));
 
 
 app.get('/', function (req, res) {
