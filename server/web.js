@@ -17,7 +17,7 @@ app.use('/', express.static('./dist'));
 
 
 app.get('/', function (req, res) {
-    res.sendFile('./app/index.html');
+    res.sendfile('./app/index.html');
 });
 
 
