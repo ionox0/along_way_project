@@ -5,12 +5,10 @@ $separator:#338DCD;
  $background2:#ED4848;
  $buttonShadow:#BA3939;
  $buttonShadow2:#6D2121;
-
-body {
+ body {
     background-color: $background;
     font-family: "Open Sans";
 }
-
 //Navbar Styling
 nav {
     position: relative;
@@ -22,50 +20,44 @@ nav {
     ul {
         list-style: none;
         width: 100%;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        height: 100%;
         a {
             color: white;
         }
         li {
-            
+            font-size: 1.5em;
             display: inline-block;
         }
     }
 }
 nav ul li#title {
     text-align: center;
-    width:200px;
-    left:50%;
+    width: 200px;
+    left: 50%;
     margin-left: -100px;
-    position:absolute;
+    position: absolute;
     line-height: 2em;
     color: white;
-            }
-nav ul li#list{
-    float: right;
-    line-height:3em;
-    z-index:2;
-    
-    
-    }
-nav ul li#filter{
-    line-height:3em;
+}
+nav ul li#list {
+    position: absolute;
+    right: 0.5em;
+    line-height: 2em;
+    z-index: 2;
+}
+nav ul li#filter {
+    position: absolute;
+    line-height: 2em;
     float: left;
-    z-index:2;
-    }
-
+    z-index: 2;
+}
 #title {
     text-align: center;
     font-weight: 100;
-    font-size: 1.5em;
-    font-family: "Dancing Script"
+    font-family: "Dancing Script";
 }
-.fi-map{
-    font-size: 1.5em;
-    position: absolute;
-    bottom:0.5em;
-    right: 0.5em;
-} 
-
 //Button Styling
 button {
     background-color: $background2;
@@ -90,7 +82,6 @@ button:visited {
     border-color: $buttonShadow;
     box-shadow: 2px 2px 0px 1px $buttonShadow;
 }
-
 //Layout Styling
 #directions {
     input {
@@ -119,7 +110,7 @@ button:visited {
     nav ul li#list {
         display: none;
     }
-    nav ul li#filter{
+    nav ul li#filter {
         display: none;
     }
     .largeScreen {
@@ -136,16 +127,17 @@ button:visited {
         border-top: none;
     }
 }
-
 //List View Styling
 .vcard {
     border-bottom: 2px solid $separator;
     width: 100%;
     margin-bottom: 0;
 }
-
 ul li {
- color: $text;
+    color: $text;
 }
-
-
+@media (max-width: 767px) {
+    .filterForm  {
+        display: none;
+    }
+}
