@@ -15,7 +15,6 @@ function calcRoute() {
 
     var start = document.getElementById('start').value.trim();
     var end = document.getElementById('end').value.trim();
-    var place = document.getElementById('place').value.trim();
 
     var request = {
         origin: start,
@@ -29,7 +28,7 @@ function calcRoute() {
             boxes = routeBoxer.box(path, distance);
             drawBoxes(boxes);
 
-            findPlaces(boxes, 0, place);
+            findPlaces(boxes, 0);
         } else {
             alert("Directions query failed: " + status);
         }
