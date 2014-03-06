@@ -61,6 +61,7 @@ nav ul li#filter {
 //Button Styling
 button {
     background-color: $background2;
+    padding: 0.4em;
     margin: 0;
     border-color: $buttonShadow;
     border-radius: 0.3em;
@@ -93,6 +94,7 @@ button:visited {
         margin-top: 3px;
         font-weight: 100;
         color: $text;
+        z-index: 2;
     }
 }
 #map-canvas {
