@@ -18,7 +18,7 @@ function createMarker(place){
     marker=new google.maps.Marker({
       map:map,
       icon: image,
-      position:place.geometry.location
+      position:place.geometry.location,
     });
   //}, 200);
 
@@ -31,13 +31,18 @@ function createMarker(place){
     placesServices.getDetails(request, function(place, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         var contentStr = '<h5>'+place.name+'</h5><p>'+place.formatted_address;
-        if (!!place.formatted_phone_number) contentStr += '<br>'+place.formatted_phone_number;
-        if (!!place.website) contentStr += '<br><a target="_blank" href="'+place.website+'">'+place.website+'</a>';
-        contentStr += '<br>'+place.types+'</p>';
+        if (!!place.formatted_phone_number) {
+            contentStr += '<br>'+place.formatted_phone_number;
+        }
+        if (!!place.website) {
+          contentStr += '<br><a target="_blank" href="'+place.website+'">'+place.website+'</a>';
+        }
+
+        contentStr += '<br>'+place.types.join(", ")+'</p>';
         infowindow.setContent(contentStr);
         infowindow.open(map,marker);
       } else {
-        var contentStr = "<h5>No Result, status="+status+"</h5>";
+        var contentStr = "<h5>No Result</h5>";
         infowindow.setContent(contentStr);
         infowindow.open(map,marker);
       }
