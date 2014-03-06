@@ -69,19 +69,19 @@ button {
     margin-bottom: 8px;
     font-weight: 100;
     width: 100%;
-    box-shadow: 3px 3px 0px 2px $buttonShadow;
+    box-shadow: 2px 2px 0px 1px $buttonShadow;
 }
 button:hover {
     background-color: $buttonShadow;
     border-color: $buttonShadow2;
-    box-shadow: 3px 3px 0px 2px $buttonShadow2;
+    box-shadow: 2px 2px 0px 1px $buttonShadow2;
 }
 button:focus,
 button:active,
 button:visited {
     background-color: $background2;
     border-color: $buttonShadow;
-    box-shadow: 2px 2px 0px 1px $buttonShadow;
+    box-shadow: 1px 1px 0px 1px $buttonShadow;
 }
 //Layout Styling
 #directions {
