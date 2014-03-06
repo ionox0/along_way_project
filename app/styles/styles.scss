@@ -8,6 +8,11 @@ $separator:#338DCD;
  body {
     background-color: $background;
     font-family: "Open Sans";
+     color: $text;
+     h3, h4, h5, h6 {
+     text-align: center;
+         color: #888;
+     }
 }
 //Navbar Styling
 nav {
@@ -61,6 +66,7 @@ nav ul li#filter {
 //Button Styling
 button {
     background-color: $background2;
+    padding: 0.4em;
     margin: 0;
     border-color: $buttonShadow;
     border-radius: 0.3em;
@@ -68,31 +74,32 @@ button {
     margin-bottom: 8px;
     font-weight: 100;
     width: 100%;
-    box-shadow: 3px 3px 0px 2px $buttonShadow;
+    box-shadow: 2px 2px 0px 1px $buttonShadow;
 }
 button:hover {
     background-color: $buttonShadow;
     border-color: $buttonShadow2;
-    box-shadow: 3px 3px 0px 2px $buttonShadow2;
+    box-shadow: 2px 2px 0px 1px $buttonShadow2;
 }
 button:focus,
 button:active,
 button:visited {
     background-color: $background2;
     border-color: $buttonShadow;
-    box-shadow: 2px 2px 0px 1px $buttonShadow;
+    box-shadow: 1px 1px 0px 1px $buttonShadow;
 }
 //Layout Styling
 #directions {
     input {
         width: 100%;
-        font-size: 1em;
-        padding: 0.5em;
+        font-size: 0.9em;
+        padding: 0.4em;
         margin: 0;
         border-radius: 0.3em;
         margin-top: 3px;
         font-weight: 100;
         color: $text;
+        z-index: 2;
     }
 }
 #map-canvas {
@@ -105,6 +112,22 @@ button:visited {
 #map-canvas img {
     max-width: none;
     display: inline-block;
+}
+.filterForm {
+    margin: 2em 0em 2em 0em;
+    input{
+    border-radius: 0.3em;
+        display: inline-block;
+    }
+    label {
+    color: #888;
+        display: inline-block;
+        padding: 0.2em;
+        
+    }
+    #dollaz {
+    color: #888;
+    }
 }
 @media (min-width: 768px) {
     nav ul li#list {
@@ -137,7 +160,7 @@ ul li {
     color: $text;
 }
 @media (max-width: 767px) {
-    .filterForm  {
+    .filterForm {
         display: none;
     }
 }
