@@ -8,6 +8,11 @@ $separator:#338DCD;
  body {
     background-color: $background;
     font-family: "Open Sans";
+     color: $text;
+     h3, h4, h5, h6 {
+     text-align: center;
+         color: #888;
+     }
 }
 //Navbar Styling
 nav {
@@ -112,9 +117,16 @@ button:visited {
     margin: 2em 0em 2em 0em;
     input{
     border-radius: 0.3em;
+        display: inline-block;
     }
     label {
-    color: $text;
+    color: #888;
+        display: inline-block;
+        padding: 0.2em;
+        
+    }
+    #dollaz {
+    color: #888;
     }
 }
 @media (min-width: 768px) {
