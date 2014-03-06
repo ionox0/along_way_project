@@ -3,32 +3,35 @@ var minRating = 1;
 var markers = [];
 
 function findPlaces(boxes, searchIndex) {
-
-  var place = document.getElementById('place').value;
-  placesServices = new google.maps.places.PlacesService(map);
-  var request = {
-    bounds: boxes[searchIndex],
-    keyword: place
-  }
-  placesServices.radarSearch(request, function (results, status) {
-
-    if (status != google.maps.places.PlacesServiceStatus.OK) {
-      alert("Request["+searchIndex+"] failed: "+status);
-      return;
+    var nowOpen = document.getElementById('checkbox1').value ;
+    var maxPrice = document.getElementById('max-price').value || 4;
+    var place = document.getElementById('place').value;
+    placesServices = new google.maps.places.PlacesService(map);
+    var request = {
+        bounds: boxes[searchIndex],
+        keyword: place,
+        maxPriceLevel: maxPrice,
+        openNow: nowOpen
     }
-    for (var i = 0, result; result = results[i]; i++) {
+    placesServices.radarSearch(request, function (results, status) {
 
-      //if (result.rating != null){
-        var marker = createMarker(result);
+        if (status != google.maps.places.PlacesServiceStatus.OK) {
+            alert("Request[" + searchIndex + "] failed: " + status);
+            return;
+        }
+        for (var i = 0, result; result = results[i]; i++) {
 
-        markers.push(marker);
-      //}
-    }
-    // console.log(placesServices.getDetails());
+            //if (result.rating != null){
+            var marker = createMarker(result);
 
-    searchIndex++;
-    if (searchIndex < boxes.length)
-      findPlaces(boxes,searchIndex);
+            markers.push(marker);
+            //}
+        }
+        // console.log(placesServices.getDetails());
 
-  });
+        searchIndex++;
+        if (searchIndex < boxes.length)
+            findPlaces(boxes, searchIndex);
+
+    });
 }
