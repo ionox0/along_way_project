@@ -87,8 +87,8 @@ button:visited {
 #directions {
     input {
         width: 100%;
-        font-size: 1em;
-        padding: 0.5em;
+        font-size: 0.9em;
+        padding: 0.4em;
         margin: 0;
         border-radius: 0.3em;
         margin-top: 3px;
@@ -107,6 +107,10 @@ button:visited {
 #map-canvas img {
     max-width: none;
     display: inline-block;
+}
+.filterForm {
+    margin: 2em 0em 2em 0em;
+     border-radius: 0.3em;
 }
 @media (min-width: 768px) {
     nav ul li#list {
@@ -139,7 +143,7 @@ ul li {
     color: $text;
 }
 @media (max-width: 767px) {
-    .filterForm  {
+    .filterForm {
         display: none;
     }
 }
