@@ -7,13 +7,14 @@ app.use(logfmt.requestLogger());
 app.enable('trust proxy');
 app.get('trust proxy');
 
-app.set('title', 'Along the Ways');
+app.set('title', 'Along the Way');
 app.get('title');
 // => "My Site"
 
 
 
-app.use('/dist', express.static(__dirname + '/app/dist'));
+// app.use('/dist', express.static(__dirname + '/dist'));
+app.use('/', express.static('./dist'));
 
 
 app.get('/', function (req, res) {
