@@ -1,46 +1,47 @@
 var placesServices;
 var minRating = 1;
-var markers = [];
 var place = document.getElementById('place').value;
-placesServices = new google.maps.places.PlacesService(map);
 var yelp_key = 'vhGs7ntrDsYquBIwzmouag';
-//var yelp_key = 'iWptnI0ceS0oW8qboR1XGg';
 var yelpURL = "http://api.yelp.com/business_review_search?callback=?";
-var googlePlacesReferences = [];
-var googlePlacesAddresses = [];
 
 function findPlaces(boxes, searchIndex) {
-
+  placesServices = new google.maps.places.PlacesService(map);
   var request = {
     bounds: boxes[searchIndex],
     keyword: place
   }
-
-  placesServices.radarSearch(request, function (googleResults, status) {
-
+  placesServices.radarSearch(request, function (results, status) {
     if (status != google.maps.places.PlacesServiceStatus.OK) {
         alert("Request["+searchIndex+"] failed: "+status);
         return;
     }
-
-    for (var i = 0; i < googleResults.length; i++) {
-
-      googlePlacesReferences.push(googleResults[i].reference)
-
+    for (var i = 0; i < results.length; i++) {
+      getDeets(results[i]);
     }
+    searchIndex++;
+    if (searchIndex < boxes.length){
+      findPlaces(boxes,searchIndex);
+    }
+  });
+}
 
-    var request =  {
-        reference: result.reference
-    };
+function getDeets(business){
+  var request =  {
+    reference: business.reference
+  };
+  placesServices.getDetails(request, function(result, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      getRating(result.formatted_address);
+    }else {
+      var contentStr = "<h5>No Result, status="+status+"</h5>";
+      infowindow.setContent(contentStr);
+    }
+  });
+}
 
+function getRating(address){
 
-    setTimeout(function(){console.log(placesAddresses)},5000);
-
-
-
-    // console.log(placesServices.getDetails());
-
-    var yelp_params = {
+  var yelp_params = {
         // "term": "pizza",
         "location": encodeURI(address),
         // "ywsid": yelp_key
@@ -48,38 +49,13 @@ function findPlaces(boxes, searchIndex) {
         "radius": .5,
         "limit": 50,
         "ywsid": yelp_key
+      }
+
+  $.getJSON(yelpURL, yelp_params, function(results) {  //call the Yelp API -'results' again is a problem?
+    var locs = results.businesses;
+    if (locs[0].avg_rating > 1){
+      var marker = createMarker(result);
+      markers.push(marker);
     }
-
-    $.getJSON(yelpURL, yelp_params, function(yelpResults) {  //call the Yelp API -'results' again is a problem?
-        console.log(i + " " + yelpResults.businesses[0]);
-        console.log(yelpResults.businesses[0].avg_rating);
-        var locs = yelpResults.businesses;
-        if (locs.businesses[0].avg_rating > 1){
-            var marker = createMarker(result);
-            markers.push(marker);
-        }
-    })
-
-    searchIndex++;
-    if (searchIndex < boxes.length){
-      findPlaces(boxes,searchIndex);
-    }
-
-  });
-
-  console.log(placesAddresses);
-
-}
-
-function getDeets(searchIndex2){
-
-  placesServices.getDetails(request, function(place, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      googlePlacesAddresses.push(place.formatted_address);
-      address = place.formatted_address;
-    }else {
-      var contentStr = "<h5>No Result, status="+status+"</h5>";
-      infowindow.setContent(contentStr);
-    }
-  });
+  })
 }
