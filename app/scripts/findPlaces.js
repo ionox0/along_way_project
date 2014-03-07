@@ -13,7 +13,7 @@ function findPlaces(boxes, searchIndex) {
         openNow: nowOpen
     };
     placesServices.radarSearch(request, function (results, status) {
-      console.log(results);
+      //console.log(results);
         if (status != google.maps.places.PlacesServiceStatus.OK) {
             console.log("Request[" + searchIndex + "] failed: " + status);
         }else{
@@ -50,7 +50,7 @@ function getRating(inputPlace){
     };
     //console.log(yelp_params);
     $.getJSON(yelpURL, yelp_params, function(results) {
-      //if(results.businesses[0].rating > 1){
+      console.log(results);
       if (results.businesses[0].avg_rating > 4){        //set to a slider value
         createMarker(place);
       }
