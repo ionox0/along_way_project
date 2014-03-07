@@ -19,7 +19,7 @@ function findPlaces(boxes, searchIndex) {
         }else{
           for (var i = 0, result; result = results[i]; i++) {
             console.log("boxes " + searchIndex + ", result: " + i + " " + result);
-            getRating(result);
+            //getRating(result);
           }
         }
         searchIndex++;
@@ -28,6 +28,7 @@ function findPlaces(boxes, searchIndex) {
     });
 }
 
+/*
 function getRating(inputPlace){
   console.log(inputPlace);
   var place = inputPlace;
@@ -55,3 +56,4 @@ function getRating(inputPlace){
     });
   });
 }
+*/
