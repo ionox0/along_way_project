@@ -45,7 +45,7 @@
                 <input type='text' id='place' class="large-12 medium-12 small-12 columns" placeholder='What are you looking for?'>
 
                 <div class="large-8 medium-4 small-4 large-centered medium-centered small-centered columns">
-                    <button type='submit' id='search-route-button'>Search</button>
+                    <button type='submit' class='search-route-button'>Search</button>
                 </div>
 
 
@@ -56,8 +56,7 @@
                 <h6>Filter Options</h6>
                 <input id="radius" type="text" placeholder="search radius">
                 <label for="checkbox1">Now Open</label>
-                <input id="checkbox1" type="checkbox">
-                <input id="max-price" type="text" placeholder="max-price">
+                <input id="checkbox1" type="checkbox"><br><br>
                 <label>Choose Price Level</label>
                 <br>
                 <input type="radio" name="priceLevel" value="1" id="dollar1">
@@ -69,15 +68,15 @@
                 <input type="radio" name="priceLevel" value="4" id="dollar4">
                 <label id="dollaz" for="dollar4">$$$$</label>
                 <div class="large-8 medium-4 small-4 large-centered medium-centered small-centered columns">
-                    <button type='submit' id='search-route-button'>Filter</button>
+                    <button type='submit' class='search-route-button'>Filter</button>
                      <button type='submit' id='hide'>Hide</button>
-                    
+                     <button class="listLink"><a href="listView.html">List View</a></button>
+
                 </div>
             </div>
         </div>
     </div>
-    <button class="listLink"><a href="listView.html">List View</a></button>
-
+   
     <div id="map-canvas"></div>
     <div id="warnings_panel"></div>
 

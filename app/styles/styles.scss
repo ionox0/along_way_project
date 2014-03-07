@@ -13,7 +13,7 @@ $separator:#338DCD;
         text-align: center;
         color: #888;
     }
-    a {
+    a, a:hover {
         color: white;
     }
 }
@@ -52,6 +52,13 @@ nav ul li#title {
 nav ul li#list {
     position: absolute;
     right: 0.5em;
+    line-height: 2em;
+    z-index: 2;
+}
+nav ul li#map {
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
     line-height: 2em;
     z-index: 2;
 }
@@ -94,15 +101,13 @@ button:visited {
 .listLink,
 .listLink:hover,
 .listLink:focus,
-.ListLink:active {
-    width: 100px;
+.listLink:active {
     background-color: $separator;
     border: none;
     box-shadow: none;
-    position: absolute;
-    top: 0%;
-    right: 0;
-    z-index: 3;
+    position: inherit;
+    bottom: 0;
+   
 }
 //Layout Styling
 #directions {
@@ -168,6 +173,9 @@ button:visited {
     #map-canvas {
         border-left: 0.2em solid $separator;
         border-top: none;
+    }
+    #hide {
+    display: none;
     }
 }
 //List View Styling
