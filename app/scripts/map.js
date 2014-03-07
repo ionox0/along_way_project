@@ -37,11 +37,6 @@ function initialize() {
 
     var end_complete = new google.maps.places.Autocomplete(end);
     end_complete.bindTo('bounds', map);
-<<<<<<< HEAD
-
-    google.maps.event.addListener(start_complete, 'place_changed', function() {
-=======
->>>>>>> 60cdc86d7ea16536bc69008972e323ed4538cd7a
 
     google.maps.event.addListener(start_complete, 'place_changed', function() {
         var place = start_complete.getPlace();
