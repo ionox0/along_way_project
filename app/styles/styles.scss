@@ -88,6 +88,16 @@ button:visited {
     border-color: $buttonShadow;
     box-shadow: 1px 1px 0px 1px $buttonShadow;
 }
+.listLink {
+    width: 100px;
+    background-color: $separator;
+    border: none;
+    box-shadow: none;
+    position: absolute;
+    top: 0%;
+    right: 0;
+    z-index: 3;
+}
 //Layout Styling
 #directions {
     input {
@@ -144,6 +154,7 @@ button:visited {
     .row {
         width: 100%;
     }
+    
     #directions {
         input, button {
             margin-top: 0.5em;
@@ -165,6 +176,9 @@ ul li {
 }
 @media (max-width: 767px) {
     .filterForm {
+        display: none;
+    }
+    .listLink {
         display: none;
     }
 }
