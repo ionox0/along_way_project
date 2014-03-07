@@ -32,6 +32,17 @@ function findPlaces(boxes, searchIndex) {
         openNow: nowOpen
     };
     placesServices.radarSearch(request, function (results, status) {
+<<<<<<< HEAD
+      //console.log(results);
+        if (status != google.maps.places.PlacesServiceStatus.OK) {
+            console.log("Request[" + searchIndex + "] failed: " + status);
+        }else{
+          for (var i = 0, result; result = results[i]; i++) {
+            console.log("boxes " + searchIndex + ", result: " + i + " " + result);
+            getRating(result);
+            //createMarker(result);
+          }
+=======
         //console.log(results);
         if (status != google.maps.places.PlacesServiceStatus.OK) {
             console.log("Request[" + searchIndex + "] failed: " + status);
@@ -41,6 +52,7 @@ function findPlaces(boxes, searchIndex) {
                 //getRating(result);
                 createMarker(result);
             }
+>>>>>>> 09cd96b449f4002b6d6369fd3c0906cfe2bf9348
         }
         searchIndex++;
         if (searchIndex < boxes.length)
@@ -48,7 +60,7 @@ function findPlaces(boxes, searchIndex) {
     });
 }
 
-/*
+
 function getRating(inputPlace){
   console.log(inputPlace);
   var place = inputPlace;
@@ -76,4 +88,8 @@ function getRating(inputPlace){
     });
   });
 }
+<<<<<<< HEAD
+
+=======
 */
+>>>>>>> 09cd96b449f4002b6d6369fd3c0906cfe2bf9348

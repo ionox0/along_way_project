@@ -15,14 +15,9 @@ function initialize() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            // addMarker(initialLocation);
+            map.setCenter(initialLocation);
         });
     }
-    // Browser doesn't support Geolocation
-    // else {
-    //     addMarker(initialLocation);
-    // }
-
     var mapOptions = {
         zoom: 15,
         center: initialLocation

@@ -98,6 +98,10 @@ button:visited {
     border-color: $buttonShadow;
     box-shadow: 1px 1px 0px 1px $buttonShadow;
 }
+#yelpify{
+    height: 20px;
+    width:auto;
+}
 .listLink,
 .listLink:hover,
 .listLink:focus,
@@ -107,7 +111,6 @@ button:visited {
     box-shadow: none;
     position: inherit;
     bottom: 0;
-   
 }
 //Layout Styling
 #directions {
@@ -144,6 +147,10 @@ button:visited {
         color: #888;
         display: inline-block;
         padding: 0.2em;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 09cd96b449f4002b6d6369fd3c0906cfe2bf9348
     }
     #dollaz {
         color: #888;
