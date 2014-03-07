@@ -24,7 +24,7 @@ function findPlaces(boxes, searchIndex) {
     placesServices = new google.maps.places.PlacesService(map);
     var nowOpen = document.getElementById('checkbox1').checked;
     var place = document.getElementById('place').value;
-    
+
     var request = {
         bounds: boxes[searchIndex],
         keyword: place,
@@ -35,21 +35,12 @@ function findPlaces(boxes, searchIndex) {
         //console.log(results);
         if (status != google.maps.places.PlacesServiceStatus.OK) {
             console.log("Request[" + searchIndex + "] failed: " + status);
-<<<<<<< HEAD
-        }else{
-          for (var i = 0, result; result = results[i]; i++) {
-            console.log("boxes " + searchIndex + ", result: " + i + " " + result);
-            getRating(result);
-            //createMarker(result);
-          }
-=======
         } else {
             for (var i = 0, result; result = results[i]; i++) {
                 console.log("boxes " + searchIndex + ", result: " + i + " " + result);
                 //getRating(result);
                 createMarker(result);
             }
->>>>>>> 09cd96b449f4002b6d6369fd3c0906cfe2bf9348
         }
         searchIndex++;
         if (searchIndex < boxes.length)
