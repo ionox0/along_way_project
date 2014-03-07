@@ -24,7 +24,7 @@ function findPlaces(boxes, searchIndex) {
     placesServices = new google.maps.places.PlacesService(map);
     var nowOpen = document.getElementById('checkbox1').checked;
     var place = document.getElementById('place').value;
-    
+
     var request = {
         bounds: boxes[searchIndex],
         keyword: place,
@@ -48,7 +48,7 @@ function findPlaces(boxes, searchIndex) {
     });
 }
 
-/*
+
 function getRating(inputPlace){
   console.log(inputPlace);
   var place = inputPlace;
@@ -76,4 +76,8 @@ function getRating(inputPlace){
     });
   });
 }
+<<<<<<< HEAD
+
+=======
 */
+>>>>>>> 09cd96b449f4002b6d6369fd3c0906cfe2bf9348

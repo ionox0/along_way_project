@@ -27,12 +27,14 @@
         <div class="row">
             <nav class="large-12 medium-12 small-12 columns">
                 <ul>
-                    <li id="filter">
-                        <a href=""><i class="fi-filter"></i></a>
+                    <li id="filter"><a>
+                            <i class="fi-filter"></i></a>
                     </li>
                     <li id="title">Places along the way</li>
                     <li id="list">
-                        <a href="listView.html"><i class="fi-list"></i></a>
+                        <a href="listView.html">
+                            <i class="fi-list"></i>
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -42,10 +44,9 @@
                 <input type="text" id="end" placeholder="End">
                 <input type="text" id="place" class="large-12 medium-12 small-12 columns" placeholder="What are you looking for?">
 
-                <div class="large-8 medium-4 small-4 large-centered medium-centered small-centered columns"><button type="submit" id="search-route-button">Search</button></div>
-
-                <!--                 <button class="large-12 medium-4 small-12 columns" id="search-places-button">Search Places</button>
- -->
+                <div class="large-8 medium-4 small-4 large-centered medium-centered small-centered columns">
+                    <button type="submit" class="search-route-button">Search</button>
+                </div>
 
 
             </div>
@@ -54,13 +55,24 @@
             <div class="large-12 columns">
                 <h6>Filter Options</h6>
                 <input id="radius" type="text" placeholder="search radius">
-               <label for="checkbox1">Now Open</label> <input id="checkbox1" type="checkbox">
-                <input id="max-price" type="text" placeholder="max-price">
-                <label>Choose Price Level</label><br>
-      <input type="radio" name="priceLevel" value="1" id="dollar1"><label id="dollaz" for="dollar1">$</label>
-      <input type="radio" name="priceLevel" value="2" id="dollar2"><label id="dollaz" for="dollar2">$$</label>
-            <input type="radio" name="priceLevel" value="3" id="dollar3"><label id="dollaz" for="dollar3">$$$</label>
-            <input type="radio" name="priceLevel" value="4" id="dollar4"><label id="dollaz" for="dollar4">$$$$</label>
+                <label for="checkbox1">Now Open</label>
+                <input id="checkbox1" type="checkbox"><br><br>
+                <label>Choose Price Level</label>
+                <br>
+                <input type="radio" name="priceLevel" value="1" id="dollar1">
+                <label id="dollaz" for="dollar1">$</label>
+                <input type="radio" name="priceLevel" value="2" id="dollar2">
+                <label id="dollaz" for="dollar2">$$</label>
+                <input type="radio" name="priceLevel" value="3" id="dollar3">
+                <label id="dollaz" for="dollar3">$$$</label>
+                <input type="radio" name="priceLevel" value="4" id="dollar4">
+                <label id="dollaz" for="dollar4">$$$$</label>
+                <div class="large-8 medium-4 small-4 large-centered medium-centered small-centered columns">
+                    <button type="submit" class="search-route-button">Filter</button>
+                     <button type="submit" id="hide">Hide</button>
+                     <button class="listLink"><a href="listView.html">List View</a></button>
+
+                </div>
             </div>
         </div>
     </div>
