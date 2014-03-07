@@ -20,6 +20,7 @@ function findPlaces(boxes, searchIndex) {
           for (var i = 0, result; result = results[i]; i++) {
             console.log("boxes " + searchIndex + ", result: " + i + " " + result);
             //getRating(result);
+            createMarker(result);
           }
         }
         searchIndex++;
