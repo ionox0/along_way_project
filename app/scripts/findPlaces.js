@@ -1,5 +1,12 @@
 var placesServices;
 
+$("nav #filter").click(function() {
+    $(".filterForm").addClass("shown");
+});
+             $("#hide").click(function() {
+    $(".filterForm").removeClass("shown");
+});
+
 
 function findPlaces(boxes, searchIndex) {
     placesServices = new google.maps.places.PlacesService(map);

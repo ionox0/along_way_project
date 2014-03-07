@@ -13,9 +13,9 @@ $separator:#338DCD;
         text-align: center;
         color: #888;
     }
-     a {
-     color: white;
-     }
+    a {
+        color: white;
+    }
 }
 //Navbar Styling
 nav {
@@ -31,7 +31,7 @@ nav {
         margin-bottom: 0;
         padding-bottom: 0;
         height: 100%;
-        a, a:hover , a:active , a:focus {
+        a, a:hover, a:active, a:focus {
             color: white;
         }
         li {
@@ -91,7 +91,10 @@ button:visited {
     border-color: $buttonShadow;
     box-shadow: 1px 1px 0px 1px $buttonShadow;
 }
-.listLink, .listLink:hover , .listLink:focus , .ListLink:active {
+.listLink,
+.listLink:hover,
+.listLink:focus,
+.ListLink:active {
     width: 100px;
     background-color: $separator;
     border: none;
@@ -101,7 +104,6 @@ button:visited {
     right: 0;
     z-index: 3;
 }
-
 //Layout Styling
 #directions {
     input {
@@ -158,7 +160,6 @@ button:visited {
     .row {
         width: 100%;
     }
-    
     #directions {
         input, button {
             margin-top: 0.5em;
@@ -179,14 +180,17 @@ ul li {
     color: $text;
 }
 @media (max-width: 767px) {
-    .filterForm{
+    .filterForm {
         position: absolute;
-        top: auto;
-        transition: top 10s easy-out;
+        z-index: -1;
+        top: 0;
+       &.shown {
+            position: relative;
+            z-index: 3;
+            top: auto;
+            transition: top 0.9s ease;
+        }
     }
-//    .filterForm:hover {
-////        top: 0;
-//    }
     .listLink {
         display: none;
     }
