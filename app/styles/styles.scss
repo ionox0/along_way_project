@@ -88,6 +88,10 @@ button:visited {
     border-color: $buttonShadow;
     box-shadow: 1px 1px 0px 1px $buttonShadow;
 }
+#yelpify{
+    height: 20px;
+    width:auto;
+}
 //Layout Styling
 #directions {
     input {
@@ -123,7 +127,7 @@ button:visited {
     color: #888;
         display: inline-block;
         padding: 0.2em;
-        
+
     }
     #dollaz {
     color: #888;
