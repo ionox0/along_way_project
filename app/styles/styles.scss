@@ -8,11 +8,14 @@ $separator:#338DCD;
  body {
     background-color: $background;
     font-family: "Open Sans";
-     color: $text;
-     h3, h4, h5, h6 {
-     text-align: center;
-         color: #888;
-     }
+    color: $text;
+    h3, h4, h5, h6 {
+        text-align: center;
+        color: #888;
+    }
+    a, a:hover {
+        color: white;
+    }
 }
 //Navbar Styling
 nav {
@@ -28,7 +31,7 @@ nav {
         margin-bottom: 0;
         padding-bottom: 0;
         height: 100%;
-        a {
+        a, a:hover, a:active, a:focus {
             color: white;
         }
         li {
@@ -49,6 +52,13 @@ nav ul li#title {
 nav ul li#list {
     position: absolute;
     right: 0.5em;
+    line-height: 2em;
+    z-index: 2;
+}
+nav ul li#map {
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
     line-height: 2em;
     z-index: 2;
 }
@@ -88,9 +98,22 @@ button:visited {
     border-color: $buttonShadow;
     box-shadow: 1px 1px 0px 1px $buttonShadow;
 }
+<<<<<<< HEAD
 #yelpify{
     height: 20px;
     width:auto;
+=======
+.listLink,
+.listLink:hover,
+.listLink:focus,
+.listLink:active {
+    background-color: $separator;
+    border: none;
+    box-shadow: none;
+    position: inherit;
+    bottom: 0;
+   
+>>>>>>> 09cd96b449f4002b6d6369fd3c0906cfe2bf9348
 }
 //Layout Styling
 #directions {
@@ -119,18 +142,21 @@ button:visited {
 }
 .filterForm {
     margin: 2em 0em 2em 0em;
-    input{
-    border-radius: 0.3em;
+    input {
+        border-radius: 0.3em;
         display: inline-block;
     }
     label {
-    color: #888;
+        color: #888;
         display: inline-block;
         padding: 0.2em;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 09cd96b449f4002b6d6369fd3c0906cfe2bf9348
     }
     #dollaz {
-    color: #888;
+        color: #888;
     }
 }
 @media (min-width: 768px) {
@@ -149,9 +175,17 @@ button:visited {
     .row {
         width: 100%;
     }
+    #directions {
+        input, button {
+            margin-top: 0.5em;
+        }
+    }
     #map-canvas {
         border-left: 0.2em solid $separator;
         border-top: none;
+    }
+    #hide {
+    display: none;
     }
 }
 //List View Styling
@@ -165,6 +199,17 @@ ul li {
 }
 @media (max-width: 767px) {
     .filterForm {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+       &.shown {
+            position: relative;
+            z-index: 3;
+            top: auto;
+            transition: top 0.9s ease;
+        }
+    }
+    .listLink {
         display: none;
     }
 }
