@@ -24,7 +24,7 @@ function findPlaces(boxes, searchIndex) {
     placesServices = new google.maps.places.PlacesService(map);
     var nowOpen = document.getElementById('checkbox1').checked;
     var place = document.getElementById('place').value;
-    
+
     var request = {
         bounds: boxes[searchIndex],
         keyword: place,
@@ -32,17 +32,7 @@ function findPlaces(boxes, searchIndex) {
         openNow: nowOpen
     };
     placesServices.radarSearch(request, function (results, status) {
-<<<<<<< HEAD
-      //console.log(results);
-        if (status != google.maps.places.PlacesServiceStatus.OK) {
-            console.log("Request[" + searchIndex + "] failed: " + status);
-        }else{
-          for (var i = 0, result; result = results[i]; i++) {
-            console.log("boxes " + searchIndex + ", result: " + i + " " + result);
-            getRating(result);
-            //createMarker(result);
-          }
-=======
+
         //console.log(results);
         if (status != google.maps.places.PlacesServiceStatus.OK) {
             console.log("Request[" + searchIndex + "] failed: " + status);
@@ -52,7 +42,6 @@ function findPlaces(boxes, searchIndex) {
                 //getRating(result);
                 createMarker(result);
             }
->>>>>>> 09cd96b449f4002b6d6369fd3c0906cfe2bf9348
         }
         searchIndex++;
         if (searchIndex < boxes.length)
@@ -88,8 +77,3 @@ function getRating(inputPlace){
     });
   });
 }
-<<<<<<< HEAD
-
-=======
-*/
->>>>>>> 09cd96b449f4002b6d6369fd3c0906cfe2bf9348
