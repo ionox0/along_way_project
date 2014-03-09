@@ -1,6 +1,8 @@
 $('.search-route-button').click(function(e){
+    $('#banana').show();
     calcRoute();
     e.preventDefault();
+
 });
 $('.search-places-button').click(function(e){
     clearMarkers();
@@ -8,7 +10,7 @@ $('.search-places-button').click(function(e){
     e.preventDefault();
 });
 $('#yelpify').click(function(e){
+  console.log('please wait');
   clearMarkers();
-  console.log('asdf');
   getRating(allPlaces, 0);
 })

@@ -75,7 +75,7 @@ function getRating(places, index){
       $.getJSON(yelpURL, yelp_params, function(results) {
         //console.log(results.name);
         if (results.businesses[0].avg_rating > 4){        //set to a slider value
-          //console.log(results.businesses[0].avg_rating);
+          console.log(results.businesses[0]);
           createMarker(place);
         }
       });
