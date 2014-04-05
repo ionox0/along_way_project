@@ -1,4 +1,8 @@
 along_way_project
 =================
 
-Group Project Code Fellows #1- finds places along the way
+Code Fellows - finds places along the way
+
+http://along-way-project.herokuapp.com/
+
+
