@@ -9,7 +9,6 @@ function calcRoute() {
     var miles = km * 1.609344;
     var directionsService = new google.maps.DirectionsService();
     directionsDisplay.setMap(map);
-    clearBoxes();
     clearMarkers();
     var distance = miles;
 
@@ -26,7 +25,6 @@ function calcRoute() {
             directionsDisplay.setDirections(result);
             var path = result.routes[0].overview_path;
             boxes = routeBoxer.box(path, distance);
-            drawBoxes(boxes);
 
             findPlaces(boxes, 0);
         } else {
